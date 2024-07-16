@@ -1,0 +1,12 @@
+python pymarl/main.py --config=qmix --env-config=codertask with mixer=qmix
+[DEBUG 15:20:50] git.cmd Popen(['git', 'version'], cwd=D:\code\python\pymarl3\pymarl3, stdin=None, shell=False, universal_newlines=False)
+[DEBUG 15:20:50] git.cmd Popen(['git', 'version'], cwd=D:\code\python\pymarl3\pymarl3, stdin=None, shell=False, universal_newlines=False)
+[DEBUG 15:20:50] git.cmd Popen(['git', 'diff', '--cached', '--abbrev=40', '--full-index', '--raw'], cwd=D:\code\python\pymarl3\pymarl3, stdin=None, shell=False, universal_newlines=False)
+[DEBUG 15:20:50] git.cmd Popen(['git', 'diff', '--abbrev=40', '--full-index', '--raw'], cwd=D:\code\python\pymarl3\pymarl3, stdin=None, shell=False, universal_newlines=False)
+[DEBUG 15:20:50] git.cmd Popen(['git', 'cat-file', '--batch-check'], cwd=D:\code\python\pymarl3\pymarl3, stdin=<valid stream>, shell=False, universal_newlines=False)
+[DEBUG 15:20:50] git.cmd Popen(['git', 'diff', '--cached', '--abbrev=40', '--full-index', '--raw'], cwd=D:\code\python\pymarl3\pymarl3, stdin=None, shell=False, universal_newlines=False)
+[DEBUG 15:20:50] git.cmd Popen(['git', 'diff', '--abbrev=40', '--full-index', '--raw'], cwd=D:\code\python\pymarl3\pymarl3, stdin=None, shell=False, universal_newlines=False)
+[DEBUG 15:20:50] git.cmd Popen(['git', 'cat-file', '--batch-check'], cwd=D:\code\python\pymarl3\pymarl3, stdin=<valid stream>, shell=False, universal_newlines=False)
+[INFO 15:20:50] root Saving to FileStorageObserver in D:\code\python\pymarl3\pymarl3\results\sacred\qmix.
+[DEBUG 15:20:52] pymarl Using capture mode "fd"
+Supported environments: {'sc2': functools.partial(<function env_fn at 0x000002D847EB0AE0>, env=<class 'envs.smac_v1.StarCraft2EnvWrapper.StarCraft2EnvWrapper'>), 'sc2_v2': functools.partial(<function env_fn at 0x000002D847EB0AE0>, env=<class 'envs.smac_v2.StarCraft2Env2Wrapper.StarCraft2Env2Wrapper'>), 'codertask': functools.partial(<function env_fn at 0x000002D847EB0AE0>, env=<class 'envs.codertask.codertask.CodertaskEnv'>)}

@@ -123,4 +123,4 @@ if __name__ == '__main__':
     ex.run_commandline(params)
 
     # flush
-    sys.stdout.flush()
+    # sys.stdout.flush()

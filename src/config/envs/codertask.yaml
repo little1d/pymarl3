@@ -1,9 +1,9 @@
 # ---Defatlt---
 
 # --- Pymarl3 options ---
-runner: "parallel"
+# runner: "parallel"
 env: codertask
-batch_size_run: 8
+# batch_size_run: 8
 
 test_greedy: True
 test_nepisode: 32

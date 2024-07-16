@@ -49,10 +49,11 @@ else:
 
 if codertask:
     REGISTRY["codertask"] = partial(env_fn, env=CodertaskEnv)
-    # if sys.platform == "linux":
-    #     os.environ.setdefault("SC2PATH",
-    #                           os.path.join(os.getcwd(), "3rdparty", "StarCraftII"))
+    if sys.platform == "linux":
+        os.environ.setdefault("SC2PATH",
+                              os.path.join(os.getcwd(), "3rdparty", "StarCraftII"))
 else:
     print("BaseStation is not supported...")
+
 
 print("Supported environments:", REGISTRY)
