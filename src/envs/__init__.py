@@ -18,6 +18,11 @@ except Exception as e:
     print(e)
     smacv2 = False
 
+try:
+    codertask = True
+    from .codertask import CoderTaskEnv
+except:
+    codertask = False
 
 def env_fn(env, **kwargs) -> MultiAgentEnv:
     return env(**kwargs)
@@ -35,6 +40,14 @@ else:
 
 if smacv2:
     REGISTRY["sc2_v2"] = partial(env_fn, env=StarCraft2Env2Wrapper)
+    if sys.platform == "linux":
+        os.environ.setdefault("SC2PATH",
+                              os.path.join(os.getcwd(), "3rdparty", "StarCraftII"))
+else:
+    print("SMAC V2 is not supported...")
+
+if codertask:
+    REGISTRY["codertask"] = partial(env_fn, env=CoderTaskEnv)
     if sys.platform == "linux":
         os.environ.setdefault("SC2PATH",
                               os.path.join(os.getcwd(), "3rdparty", "StarCraftII"))

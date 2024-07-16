@@ -3,8 +3,8 @@ import random
 import math
 from math import sqrt
 import numpy as np
-from pymarl.envs.multiagentenv import MultiAgentEnv
-from pymarl.utils.dict2namedtuple import convert
+from src.envs.multiagentenv import MultiAgentEnv
+from src.utils.dict2namedtuple import convert
 
 import torch
 
