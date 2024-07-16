@@ -1,3 +1,4 @@
+import collections.abc
 import random
 
 import numpy as np
@@ -55,7 +56,7 @@ def _get_config(params, arg_name, subfolder):
         with open(os.path.join(os.path.dirname(__file__), "config", subfolder, "{}.yaml".format(config_name)),
                   "r") as f:
             try:
-                config_dict = yaml.load(f)
+                config_dict = yaml.load(f, Loader=yaml.SafeLoader)
             except yaml.YAMLError as exc:
                 assert False, "{}.yaml error: {}".format(config_name, exc)
         return config_dict
@@ -63,7 +64,7 @@ def _get_config(params, arg_name, subfolder):
 
 def recursive_dict_update(d, u):
     for k, v in u.items():
-        if isinstance(v, collections.Mapping):
+        if isinstance(v, collections.abc.Mapping):
             d[k] = recursive_dict_update(d.get(k, {}), v)
         else:
             d[k] = v
@@ -94,7 +95,7 @@ if __name__ == '__main__':
     # Get the defaults from default.yaml
     with open(os.path.join(os.path.dirname(__file__), "config", "default.yaml"), "r") as f:
         try:
-            config_dict = yaml.load(f)
+            config_dict = yaml.load(f, Loader=yaml.SafeLoader)
         except yaml.YAMLError as exc:
             assert False, "default.yaml error: {}".format(exc)
 
@@ -112,7 +113,9 @@ if __name__ == '__main__':
     map_name = parse_command(params, "env_args.map_name", config_dict['env_args']['map_name'])
     algo_name = parse_command(params, "name", config_dict['name'])
     local_results_path = parse_command(params, "local_results_path", config_dict['local_results_path'])
-    file_obs_path = join(results_path, local_results_path, "sacred", map_name, algo_name)
+    # file_obs_path = join(results_path, local_results_path, "sacred", map_name, algo_name)
+    file_obs_path = join(results_path, local_results_path, "sacred", algo_name)
+
 
     logger.info("Saving to FileStorageObserver in {}.".format(file_obs_path))
     ex.observers.append(FileStorageObserver.create(file_obs_path))
