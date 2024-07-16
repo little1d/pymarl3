@@ -1,9 +1,5 @@
-# ---Defatlt---
-
 # --- Pymarl3 options ---
-# runner: "parallel"
 env: codertask
-# batch_size_run: 8
 
 test_greedy: True
 test_nepisode: 32
@@ -12,7 +8,6 @@ log_interval: 2000
 runner_log_interval: 2000
 learner_log_interval: 2000
 t_max: 2050000
-# t_max:10050000
 env_args:
   num_users: 5
   n_actions: 6
@@ -30,4 +25,13 @@ critic_lr: 0.0005 # Learning rate for critics
 optim_alpha: 0.99 # RMSProp alpha
 optim_eps: 0.00001 # RMSProp epsilon
 grad_norm_clip: 10 # Reduce magnitude of gradients above this L2 norm
-double_q: True
+
+
+# --- Logging options ---
+save_models: True
+save_interval: 100000
+
+# --- Agent parameters ---
+agent: "mlp" # Default rnn agent
+obs_last_action: False
+obs_agent_id: True

@@ -1,5 +1,4 @@
 # linux
-CUDA_VISIBLE_DEVICES="0" python src/main.py --config=hpn_qmix --env-config=codertask obs_last_action=False runner=parallel batch_size_run=8 buffer_size=5000 t_max=10050000 batch_size=128
-
+nohup CUDA_VISIBLE_DEVICES="0" python -u experiments.py --env codertask --config hpn_qmix  config qmix --params1 mixer=qmix  > ./pymarl_log716.log 2>&1 &
 # windows
-python src\main.py --config=hpn_qmix --env-config=codertask  obs_last_action=False runner=parallel batch_size_run=8 buffer_size=5000 t_max=10050000 batch_size=128
+ python -u experiments.py --env codertask --config hpn_qmix  config qmix --params1 mixer=qmix  > ./pymarl_log716.log 2>&1 &
